@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: "font-logoHB";
-    src: url("../css/fonts/DFVN\ Radja\ Lover.otf");
+    src: url("../css/DFVN\ Mighty\ Wings.otf");
     font-weight: normal;
     font-style: normal;
 }
@@ -1066,10 +1066,11 @@ body {
     width: 180px;
     height: 180px;
     align-content: center;
+    align-items: center;
     border: 3px solid rgb(0, 128, 128);
     border-radius: 50%;
-    position: absolute;
-    left: 90px;
+    position: relative;
+    left: 70px;
     margin-top: -270px;
 }
 
@@ -1232,4 +1233,36 @@ footer p {
     100% {
         background-position: 50% 50%;
     }
+}
+
+#music .music-Bg {
+    position: fixed;
+    top: 20px;
+    right: 0px;
+    width: 58px;
+    height: 58px;
+}
+
+#music .music-Bg.music-spread {
+    background: url('../img/music.gif') no-repeat center center;
+    background-size: 58px 58px;
+}
+
+#music .music-Bg .music-bg {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 15px;
+    right: 15px;
+    background: url('../img/music_off.png');
+    background-size: 100% 100%;
+    z-index: 1000;
+}
+
+#music .music-Bg .music-bg.music-bg-auto {
+    -webkit-animation: musAuto 4s linear infinite;
+    -moz-animation: musAuto 4s linear infinite;
+    -ms-animation: musAuto 4s linear infinite;
+    -o-animation: musAuto 4s linear infinite;
+    animation: musAuto 4s linear infinite;
 }

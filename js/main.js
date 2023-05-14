@@ -1,4 +1,4 @@
-// window.addEventListener("load", function () {
+﻿// window.addEventListener("load", function () {
 //     const loader = document.querySelector(".cover");
 //     loader.className += " hidden"; // class "loader hidden"
 //     document.body.style.overflow = "hidden";
@@ -41,13 +41,14 @@ $(window).on('load', function() {
 $(window).scroll(function() {
     if ($(this).scrollTop() > 800) {
         $(".header").addClass("fixed");
-        $(".fa-pause").addClass("fixed");
+        $(".fa-play").addClass("fixed");
         $(".backtop").addClass("fixed")
-
+        //$("#myAudio")[0].play();
     } else {
         $(".header").removeClass("fixed");
-        $(".fa-pause").removeClass("fixed");
+        $(".fa-play").removeClass("fixed");
         $(".backtop").removeClass("fixed")
+            // $("#myAudio")[0].pause();
     }
 })
 
@@ -77,28 +78,28 @@ var swiper2 = new Swiper(".mySwiper2", {
     },
 });
 
-$(window).on('load', function() {
+// $(window).on('load', function() {
 
-    document.body.style.overflow = "visible";
+//     //document.body.style.overflow = "visible";
 
-    $("#myAudio")[0].play();
-})
+//     $("#myAudio")[0].play();
+// })
 
 // audio
 
-$(".fa-pause").click(function() {
+$(".fa-play").click(function() {
 
-    if ($(this).hasClass("pause")) {
+    if ($(this).hasClass("play")) {
+	$("#myAudio")[0].pause();
+        console.log("pause");
+    } else {
         $("#myAudio")[0].play();
         console.log("play");
-    } else {
-        $("#myAudio")[0].pause();
-        console.log("pause");
     }
-    $(this).toggleClass("pause");
+    $(this).toggleClass("play");
 })
 let btn = document.querySelector(".toogle");
-let icon = btn.querySelector(".fa-pause");
+let icon = btn.querySelector(".fa-play");
 
 btn.onclick = function() {
     if (icon.classList.contains("fa-pause")) {
@@ -106,4 +107,14 @@ btn.onclick = function() {
     } else {
         icon.classList.replace("fa-play", "fa-pause");
     }
+}
+
+let btnHPVBank = document.querySelector("#bankHPV");
+btnHPVBank.onclick = function() {
+    alert("19032866718016 \n Phan Van Hiep Techcombank!!");
+}
+
+let btnBLBank = document.querySelector("#bankBL");
+btnBLBank.onclick = function() {
+    alert("06984267101 \n Le Thi Bich TPbank!!");
 }
